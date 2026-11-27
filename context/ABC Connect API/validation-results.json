@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-27",
+  "kind": "local_structural_validation_only",
+  "checks": [
+    {
+      "check": "all_json_files_parse",
+      "status": "passed"
+    },
+    {
+      "check": "schema_meta_validation:internal-result.schema.json",
+      "status": "passed"
+    },
+    {
+      "check": "schema_meta_validation:internal-handoff.schema.json",
+      "status": "passed"
+    },
+    {
+      "check": "schema_meta_validation:draft-wire-profiles.schema.json",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic_handoff_matches_internal_schema",
+      "status": "passed"
+    },
+    {
+      "check": "mutation_requires_commandKey",
+      "status": "passed"
+    },
+    {
+      "check": "mutation_requires_payloadSha256",
+      "status": "passed"
+    },
+    {
+      "check": "mutation_requires_authorizationDecisionRef",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic_order_matches_local_wire_subset",
+      "status": "passed"
+    },
+    {
+      "check": "reject_PO_over_16_before_wire",
+      "status": "passed"
+    },
+    {
+      "check": "reject_order_over_99_lines",
+      "status": "passed"
+    },
+    {
+      "check": "reject_invalid_local_clock_time",
+      "status": "passed"
+    },
+    {
+      "check": "valid_synthetic_pricing_profile",
+      "status": "passed"
+    },
+    {
+      "check": "reject_pricing_over_50_lines",
+      "status": "passed"
+    },
+    {
+      "check": "reject_fractional_price_quantity_for_unconfirmed_integer_contract",
+      "status": "passed"
+    },
+    {
+      "check": "block_unconfirmed_invoice_event_patch",
+      "status": "passed"
+    },
+    {
+      "check": "unique_33_operation_ids",
+      "status": "passed"
+    },
+    {
+      "check": "32_endpoint_pages",
+      "status": "passed"
+    },
+    {
+      "check": "no_duplicate_method_route_signatures",
+      "status": "passed"
+    },
+    {
+      "check": "all_workflow_calls_resolve",
+      "status": "passed"
+    },
+    {
+      "check": "no_operations_marked_live_validated_or_production_enabled",
+      "status": "passed"
+    },
+    {
+      "check": "all_events_have_example_shape_evidence",
+      "status": "passed"
+    },
+    {
+      "check": "no_example_values_contain_provider_secrets",
+      "status": "passed"
+    }
+  ],
+  "count": 23,
+  "provider_api_tests_executed": 0,
+  "limitations": [
+    "No authenticated sandbox or production calls.",
+    "Provider route/auth/response conflicts remain unresolved.",
+    "Dynamic authorization, ownership, dimensionality, price freshness, webhook authenticity and duplicate prevention need runtime implementation and acceptance testing."
+  ]
+}

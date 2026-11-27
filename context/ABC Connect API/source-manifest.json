@@ -1,0 +1,600 @@
+[
+  {
+    "url": "https://apidocs.abcsupply.com/add-favorite-item/",
+    "title": "Add Favorite Item \u2013 ABC Supply API",
+    "sha256": "837a4479cb3f0553511827b320305d178a327ed2226ed5a262a4502522f821b3",
+    "retrieved_at": "2026-11-27T13:02:36.169649+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/api-endpoints/",
+    "title": "API Endpoints \u2013 ABC Supply API",
+    "sha256": "068907807cf5d3bcd5d8bd791f45c5b4cda7022385ec62e9832ab28bb1d1c055",
+    "retrieved_at": "2026-11-27T13:02:36.157397+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/api-overview/",
+    "title": "API Overview \u2013 ABC Supply API",
+    "sha256": "dd50b128518f4af92ca2b1780dab138cafc9b7924604135db025816af328e495",
+    "retrieved_at": "2026-11-27T13:02:36.144105+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/authorization-methods/",
+    "title": "Authorization Methods \u2013 ABC Supply API",
+    "sha256": "fadd0a4dfba956050868d6854844d35cc8bdd939335be6e1ee1c258c25daf81e",
+    "retrieved_at": "2026-11-27T13:02:36.134926+00:00",
+    "resource_links": [
+      {
+        "label": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8",
+        "href": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8"
+      },
+      {
+        "label": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357",
+        "href": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/developer-portal-user-guide-2/",
+    "title": "Developer Portal User Guide \u2013 ABC Supply API",
+    "sha256": "167eb39aea27dbd90b4283ef2716c6d755587a67ae9ee72a252deb02b01ad726",
+    "retrieved_at": "2026-11-27T13:02:40.147075+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-all-items/",
+    "title": "Get All Items \u2013 ABC Supply API",
+    "sha256": "8e4754c9c52cd14d7ac47fc7e11211d6d246e43df3a7529b128c9a556cf3d550",
+    "retrieved_at": "2026-11-27T13:02:40.145448+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items",
+        "href": "https://partners.abcsupply.com/api/product/v1/items"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-bill-to/",
+    "title": "Get Bill-To \u2013 ABC Supply API",
+    "sha256": "ea25d624c7783a631f3db4de51e46f96f11a8f97e37cf3bb7a4208e1ff5e3f7c",
+    "retrieved_at": "2026-11-27T13:02:43.637705+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/account/v1/billtos/{billToNumber}",
+        "href": "https://partners.abcsupply.com/api/account/v1/billtos/{billToNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/account/v1/billtos/{billToNumber}",
+        "href": "https://partners.abcsupply.com/api/account/v1/billtos/{billToNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-branch/",
+    "title": "Get Branch \u2013 ABC Supply API",
+    "sha256": "8e87a817d9071f32ecebc9085c838de897f0eb45518a947a569f55c86a5d5d7f",
+    "retrieved_at": "2026-11-27T13:02:43.600256+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/location/v1/branches/{branchnumber}",
+        "href": "https://partners-sb.abcsupply.com/api/location/v1/branches/{branchnumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/location/v1/branches/{branchnumber}",
+        "href": "https://partners.abcsupply.com/api/location/v1/branches/{branchnumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-favorite-items/",
+    "title": "Get Favorite Items \u2013 ABC Supply API",
+    "sha256": "aaa2b0d53685213c98173ac0003e6cfef49a10750aa88d4d64b092d89b88c5cd",
+    "retrieved_at": "2026-11-27T13:02:43.643499+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/favorites",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/favorites"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/favorites",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/favorites"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-frequent-items/",
+    "title": "Get Frequent Items \u2013 ABC Supply API",
+    "sha256": "fc2b5a9c3fa32afdb331c296c29f2286fb8b0950e698d325906ec11fbae05ad0",
+    "retrieved_at": "2026-11-27T13:02:46.686922+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/frequents",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/frequents"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/frequents",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/frequents"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-invoice-by-invoice-id/",
+    "title": "Get Invoice by Invoice ID \u2013 ABC Supply API",
+    "sha256": "50af267fcfb412297636ff315cb463f63d98ef1ca27da9bde286ee7657bb6724",
+    "retrieved_at": "2026-11-27T13:02:46.659628+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/id/{invoiceId}",
+        "href": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/id/{invoiceId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/invoice/v1/invoices/id/{invoiceId}",
+        "href": "https://partners.abcsupply.com/api/invoice/v1/invoices/id/{invoiceId}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-invoice-history/",
+    "title": "Get Invoice History \u2013 ABC Supply API",
+    "sha256": "98113842f942dc56b0572a7e291958cc4c00ab71ef03bdb71c71e892d368bce8",
+    "retrieved_at": "2026-11-27T13:02:46.661399+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/history/{billToAccount}",
+        "href": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/{invoiceId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/invoice/v1/invoices/history/{billToAccount}",
+        "href": "https://partners.abcsupply.com/api/invoice/v1/invoices/history/{billToAccount}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-invoice-pdf/",
+    "title": "Get Invoice PDF \u2013 ABC Supply API",
+    "sha256": "e729a417f34b40b40c13364169cdecf7e8445b56f43f3be8152a52f0ecabd1dd",
+    "retrieved_at": "2026-11-27T13:02:46.601394+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/pdf/{invoiceId}",
+        "href": "https://partners-sb.abcsupply.com/api/invoice/v1/invoices/pdf/{invoiceId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/invoice/v1/invoices/pdf/{invoiceId}",
+        "href": "https://partners.abcsupply.com/api/invoice/v1/invoices/pdf/{invoiceId}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-item/",
+    "title": "Get Item \u2013 ABC Supply API",
+    "sha256": "b9ad86bf95aac86590c7d60b3bc07944c117b86656235a0ab8be00fd0d949ebf",
+    "retrieved_at": "2026-11-27T13:02:49.792546+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{itemNumber}",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{itemNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{itemNumber}",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{itemNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-item-availability/",
+    "title": "Get Item Availability \u2013 ABC Supply API",
+    "sha256": "acf1e1cb7798d96df202cf8dc1b4a44c7b18fbf455e7f9d2230e48c07e749b46",
+    "retrieved_at": "2026-11-27T13:02:49.362117+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/availability/items/{itemNumber}/branches",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/availability/items/{itemNumber}/branches"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/availability/items/{itemNumber}/branches",
+        "href": "https://partners.abcsupply.com/api/product/v1/availability/items/{itemNumber}/branches"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-item-image/",
+    "title": "Get Item Image \u2013 ABC Supply API",
+    "sha256": "001fadc0b6a0f9f5585237ba0f986f45e8ab29fb6f0bf60043afcc2c93f630e6",
+    "retrieved_at": "2026-11-27T13:02:49.405337+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{assetId}/images",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{assetId}/images",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/favorites/{itemNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-order-history/",
+    "title": "Get Order History \u2013 ABC Supply API",
+    "sha256": "cd4bb74c383da301524fb974c5c2b01fc326f9333600c9524ef519d94334e3be",
+    "retrieved_at": "2026-11-27T13:02:49.381613+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/order/v2/orders/orderHistory",
+        "href": "https://partners-sb.abcsupply.com/api/order/v2/orders/orderHistory"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/order/v2/orders/orderHistory",
+        "href": "https://partners.abcsupply.com/api/order/v2/orders/orderHistory"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-order-template-by-id/",
+    "title": "Get Order Template By ID \u2013 ABC Supply API",
+    "sha256": "da199bf325956deb4c50f68b1ec7607303e2bcbc109985e03f132b2d36fa651f",
+    "retrieved_at": "2026-11-27T13:02:53.738896+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/order/v2/orders/templates/{templateId}",
+        "href": "https://partners-sb.abcsupply.com/api/order/v2/orders/templates/{templateId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/order/v2/orders/templates/{templateId}",
+        "href": "https://partners.abcsupply.com/api/order/v2/orders/templates/{templateId}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-order-templates/",
+    "title": "Get Order Templates \u2013 ABC Supply API",
+    "sha256": "c72597cdc2906a3bb55594b5233ab19372ceed8925046a73ad54b13d83de9658",
+    "retrieved_at": "2026-11-27T13:02:53.735691+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/order/v2/orders/templates",
+        "href": "https://partners-sb.abcsupply.com/api/order/v2/orders/templates"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/order/v2/orders/templates",
+        "href": "https://partners.abcsupply.com/api/order/v2/orders/templates"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-orders/",
+    "title": "Get Order \u2013 ABC Supply API",
+    "sha256": "517f23245be8d89527d874d1321925165f03fa30d8cc3c2f679ab559d9aebe8a",
+    "retrieved_at": "2026-11-27T13:02:53.852943+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/order/v2/orders",
+        "href": "https://partners-sb.abcsupply.com/api/order/v2/orders"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/order/v2/orders",
+        "href": "https://partners.abcsupply.com/api/order/v2/orders"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-product-hierarchy/",
+    "title": "Get Product Hierarchy \u2013 ABC Supply API",
+    "sha256": "3e86de32728e75df32e3182c7091137a3c73814b87181f941e29a194d99eb726",
+    "retrieved_at": "2026-11-27T13:02:53.794624+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/hierarchy",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/hierarchy"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/hierarchy",
+        "href": "https://partners.abcsupply.com/api/product/v1/hierarchy"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-recent-items/",
+    "title": "Get Recent Items \u2013 ABC Supply API",
+    "sha256": "50e973809add9e4e3dc458453ff47f3164b6cd4f28345d0569a1869552e30992",
+    "retrieved_at": "2026-11-27T13:02:57.006656+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/recents",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/items/{billToNumber}/recents"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/recents",
+        "href": "https://partners.abcsupply.com/api/product/v1/items/{billToNumber}/recents"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-ship-to/",
+    "title": "Get Ship-To \u2013 ABC Supply API",
+    "sha256": "c3e0d8942796110b691431e4340bfc7dbd9198709c5720d57670dc276b0f211e",
+    "retrieved_at": "2026-11-27T13:02:57.013294+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/account/v1/shiptos/{shipToNumber}",
+        "href": "https://partners-sb.abcsupply.com/api/account/v1/shiptos/{shipToNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/account/v1/shiptos/{shipToNumber}",
+        "href": "https://partners.abcsupply.com/api/account/v1/shiptos/{shipToNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-ship-to-contacts/",
+    "title": "Get Ship-To Contacts \u2013 ABC Supply API",
+    "sha256": "622af2135375befcf542fdfa8ab11ea62dffa4ed97d7b95ab80ebd3d7a4e16da",
+    "retrieved_at": "2026-11-27T13:02:57.325937+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/accounts/v1/shiptos/{shipToNumber}/contacts",
+        "href": "https://partners-sb.abcsupply.com/api/accounts/v1/shiptos/{shipToNumber}/contacts"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/accounts/v1/shiptos/{shipToNumber}/contacts",
+        "href": "https://partners.abcsupply.com/api/accounts/v1/shiptos/{shipToNumber}/contacts"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-sold-to/",
+    "title": "Get Sold-To \u2013 ABC Supply API",
+    "sha256": "cf7a0f74d33eb0ec72f8f17b17989bb2d8c731a2bba5f82924ecd888434938d6",
+    "retrieved_at": "2026-11-27T13:02:57.918671+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/account/v1/soldtos/{soldToNumber}",
+        "href": "https://partners-sb.abcsupply.com/api/account/v1/soldtos/{soldToNumber}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/account/v1/soldtos/{soldToNumber}",
+        "href": "https://partners.abcsupply.com/api/account/v1/soldtos/{soldToNumber}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-webhook/",
+    "title": "Get Webhook \u2013 ABC Supply API",
+    "sha256": "e92c415b45faf1363b0be4ee8f5d042013ddc9c311f3aa1a28ba0bee864923f0",
+    "retrieved_at": "2026-11-27T13:02:59.997724+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/get-webhooks/",
+    "title": "Get Webhooks \u2013 ABC Supply API",
+    "sha256": "d97434373efe4d994ceadcd91aa63fa089e1252e31652b480425127a06b14471",
+    "retrieved_at": "2026-11-27T13:03:00.482183+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks",
+        "href": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/notification/v2/webhooks",
+        "href": "https://partners.abcsupply.com/api/notification/v2/webhooks"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/getting-started/",
+    "title": "Getting Started \u2013 ABC Supply API",
+    "sha256": "e42d37db8b0ad281070e34b43f51af507254bee98c93ac750835ab7f2e04c1ff",
+    "retrieved_at": "2026-11-27T13:02:59.949661+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/individual-business-integration-track/",
+    "title": "Individual Business Integration Track \u2013 ABC Supply API",
+    "sha256": "3b5f6a17e282d2a78df879126b2bde076d0a62bf4ae6ebb173b481b9348d1ba8",
+    "retrieved_at": "2026-11-27T13:02:59.961699+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/order-invoiced-event/",
+    "title": "Order Invoiced Event \u2013 ABC Supply API",
+    "sha256": "9d4b81a91c7141cc5adc6a25c09415ad6bc3521f215015e6eba6378a7716087b",
+    "retrieved_at": "2026-11-27T13:03:04.136431+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/order-update-event/",
+    "title": "Order Update Event \u2013 ABC Supply API",
+    "sha256": "572f15a4a5f3eb6e5085d5199a647db378f7b0a1d7f534e6c48a30346ea4f42a",
+    "retrieved_at": "2026-11-27T13:03:04.128409+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/place-orders/",
+    "title": "Place Orders \u2013 ABC Supply API",
+    "sha256": "fb0df82d6d1b4d2d73c58d6f8768766e71f11df96c495f2f5f83c955edb955bd",
+    "retrieved_at": "2026-11-27T13:03:00.004141+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/order/v2/orders",
+        "href": "https://partners-sb.abcsupply.com/api/order/v2/orders"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/order/v2/orders",
+        "href": "https://partners.abcsupply.com/api/order/v2/orders"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/price-items/",
+    "title": "Price Items \u2013 ABC Supply API",
+    "sha256": "0e73e3df22f3ec99247c6ec92632e1c0760a3bdae8f6e3c1a900006829cb53cc",
+    "retrieved_at": "2026-11-27T13:03:04.139029+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/pricing/v2/prices",
+        "href": "https://partners-sb.abcsupply.com/api/pricing/v2/prices"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/pricing/v2/prices",
+        "href": "https://partners.abcsupply.com/api/pricing/v2/prices"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/register-webhook/",
+    "title": "Register Webhook \u2013 ABC Supply API",
+    "sha256": "ca0ea2f8d7d76474d3ed93e6f5ef9bd3d714682404bdaede25386bdb42a8774d",
+    "retrieved_at": "2026-11-27T13:03:04.110222+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks",
+        "href": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/notification/v2/webhooks",
+        "href": "https://partners.abcsupply.com/api/notification/v2/webhooks"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/release-notes/",
+    "title": "Release Notes \u2013 ABC Supply API",
+    "sha256": "7887c56fd186f709effa07be3f678446d6a4cee2a364813cb7f1ed628ed96ef5",
+    "retrieved_at": "2026-11-27T13:03:08.454888+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/search-accounts/",
+    "title": "Search Accounts \u2013 ABC Supply API",
+    "sha256": "f61629d362e62c4c1fb088ccc7d2080c326e6b2168a753721c6d166c958015b7",
+    "retrieved_at": "2026-11-27T13:03:08.448163+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/account/v1/search/accounts",
+        "href": "https://partners-sb.abcsupply.com/api/account/v1/search/accounts"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/account/v1/search/accounts",
+        "href": "https://partners.abcsupply.com/api/account/v1/search/accounts"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/search-branches/",
+    "title": "Search Branches \u2013 ABC Supply API",
+    "sha256": "6910df4507204347247dc0ed19ca963455825f751c3aa0b622764b69b28ea6a8",
+    "retrieved_at": "2026-11-27T13:03:08.842860+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/location/v1/branches",
+        "href": "https://partners-sb.abcsupply.com/api/location/v1/branches"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/location/v1/branches",
+        "href": "https://partners.abcsupply.com/api/location/v1/branches"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/search-item-availability/",
+    "title": "Search Item Availability \u2013 ABC Supply API",
+    "sha256": "349c614a1a8420af03c2fc8eaf80a37fbc67e5962a3edc8a8d028103304bfdfe",
+    "retrieved_at": "2026-11-27T13:03:08.474567+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/search/availability/items",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/search/availability/items"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/search/availability/items",
+        "href": "https://partners.abcsupply.com/api/product/v1/search/availability/items"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/search-items/",
+    "title": "Search Items \u2013 ABC Supply API",
+    "sha256": "a19935094e2a660d612bcc097d3aa1832c2691f55ee1f128f0b6483e1101a70f",
+    "retrieved_at": "2026-11-27T13:03:11.530118+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/product/v1/search/items",
+        "href": "https://partners-sb.abcsupply.com/api/product/v1/search/items"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/product/v1/search/items",
+        "href": "https://partners.abcsupply.com/api/product/v1/search/items"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/support/",
+    "title": "Support \u2013 ABC Supply API",
+    "sha256": "414820046791d0df867534e3cfadf9544fe14278fc74b2064588cf7af4f7a977",
+    "retrieved_at": "2026-11-27T13:03:11.502107+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/third-party-aggregator-integration-track/",
+    "title": "Third-Party Aggregator Integration Track \u2013 ABC Supply API",
+    "sha256": "6b4907bf9ad97743f6976852da9867f5f97daf61ae945882a8e35cc71bdf2ec5",
+    "retrieved_at": "2026-11-27T13:03:11.465426+00:00",
+    "resource_links": []
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/unregister-webhook/",
+    "title": "Unregister Webhook \u2013 ABC Supply API",
+    "sha256": "83ea9b40d475199992e7e4083c13063bf2509bd047a075152341cca1c79482c8",
+    "retrieved_at": "2026-11-27T13:03:11.525312+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      }
+    ]
+  },
+  {
+    "url": "https://apidocs.abcsupply.com/update-webhook/",
+    "title": "Update Webhook \u2013 ABC Supply API",
+    "sha256": "97731f9e8e23c26ca4c8481259ef335a29f02a031f906cd3197acfcea77bf579",
+    "retrieved_at": "2026-11-27T13:03:14.455646+00:00",
+    "resource_links": [
+      {
+        "label": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners-sb.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      },
+      {
+        "label": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}",
+        "href": "https://partners.abcsupply.com/api/notification/v2/webhooks/{webhookId}"
+      }
+    ]
+  }
+]

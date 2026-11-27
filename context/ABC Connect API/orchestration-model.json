@@ -1,0 +1,194 @@
+{
+  "version": "0.1.0",
+  "status": "proposed internal orchestration; not a deployed integration",
+  "workflow": "contractor_material_order",
+  "context_binding": [
+    "tenantId",
+    "principalId",
+    "connectionId",
+    "integrationTrack",
+    "environment",
+    "accountBindingRef"
+  ],
+  "steps": [
+    {
+      "id": "resolve_account",
+      "calls": [
+        "search_accounts",
+        "get_ship_to",
+        "get_bill_to",
+        "get_sold_to",
+        "get_ship_to_contacts"
+      ],
+      "produces": "AuthorizedJobContext",
+      "fields": [
+        "shipToNumber",
+        "billToNumber",
+        "soldToNumber",
+        "allowedBranchNumbers",
+        "chosenBranchNumber",
+        "sourceEvidenceRefs",
+        "observedAt"
+      ],
+      "gate": "Contacts route D02 may be deferred if user supplies verified order contacts. Re-derive account hierarchy from authorized source responses; do not derive numbers by string manipulation."
+    },
+    {
+      "id": "choose_branch",
+      "depends_on": [
+        "resolve_account"
+      ],
+      "calls": [
+        "get_branch",
+        "search_branches"
+      ],
+      "produces": "BranchContext",
+      "gate": "The selected branch must belong to allowedBranchNumbers. Geographic search results alone are not account permission."
+    },
+    {
+      "id": "assemble_lines",
+      "depends_on": [
+        "choose_branch"
+      ],
+      "calls": [
+        "search_items",
+        "get_item",
+        "get_order_templates",
+        "get_order_template",
+        "get_favorite_items",
+        "get_recent_items",
+        "get_frequent_items",
+        "get_product_hierarchy"
+      ],
+      "produces": "DraftOrderLines",
+      "gate": "Selected SKU, ABC description, ordered UOM and quantity, dimensional length and warnings are explicit. Template/favorite/recommendation data is a starting point only."
+    },
+    {
+      "id": "verify_offering",
+      "depends_on": [
+        "assemble_lines"
+      ],
+      "calls": [
+        "search_item_availability",
+        "get_item_availability"
+      ],
+      "produces": "OfferingEvidence",
+      "gate": "Match selected item, selected branch and dimensional variation. Availability is not on-hand stock or promised delivery."
+    },
+    {
+      "id": "reprice",
+      "depends_on": [
+        "verify_offering"
+      ],
+      "calls": [
+        "price_items"
+      ],
+      "produces": "PriceSnapshot",
+      "batch_size_max": 50,
+      "gate": "Every intended line has a successful matching result; prices, quantity, UOM, currency, Ship-To and branch remain bound. Fractional quantities cannot be rounded to satisfy pricing integer type. Zero price routes to branch pricing review under local policy, even if line status is OK."
+    },
+    {
+      "id": "authorize_proposal",
+      "depends_on": [
+        "reprice"
+      ],
+      "calls": [],
+      "produces": "AuthorizedOrderProposal",
+      "gate": "Local policy requires reviewed address, contacts, delivery service/time, warnings, PO <=16, <=99 lines, current account/branch context and any required approval bound to exact payload hash. No inventory reservation or final-price guarantee is implied."
+    },
+    {
+      "id": "submit_once",
+      "depends_on": [
+        "authorize_proposal"
+      ],
+      "calls": [
+        "place_orders"
+      ],
+      "produces": "OrderSubmissionReceipt",
+      "gate": "Atomically persist command key/hash before sending. Parse per-order results on 202. Same key/different payload is a local conflict. A transport timeout is indeterminate, not a failed order safe to repeat."
+    },
+    {
+      "id": "await_branch",
+      "depends_on": [
+        "submit_once"
+      ],
+      "calls": [
+        "get_order_by_confirmation",
+        "get_order_by_number"
+      ],
+      "inbound": [
+        "ORDER_UPDATE"
+      ],
+      "produces": "OrderObservation",
+      "gate": "Keep a receipt visible while awaiting branch acceptance/ERP visibility. Bounded read retries and a local deadline may escalate; never resubmit merely because details are absent."
+    },
+    {
+      "id": "reconcile_invoice",
+      "depends_on": [
+        "await_branch"
+      ],
+      "calls": [
+        "get_invoice_history",
+        "get_invoice",
+        "get_invoice_pdf"
+      ],
+      "inbound": [
+        "ORDER_INVOICED"
+      ],
+      "produces": "InvoiceObservation",
+      "gate": "Invoice GET endpoints are gated off for third-party aggregator integrations by current docs. Invoice webhook eligibility and authentication must be verified independently; do not infer GET access from a received event."
+    }
+  ],
+  "background_workflows": [
+    {
+      "id": "catalog_sync",
+      "calls": [
+        "get_all_items"
+      ],
+      "policy": "Full ingest, then ISO-8601 delta queries within 7 days. Apply Inactive tombstones. Checkpoint only completed runs; overlap watermarks and deduplicate locally if validated. Run full sync when stale beyond the documented lookback. Refresh availability before purchase."
+    },
+    {
+      "id": "webhook_registry",
+      "calls": [
+        "register_webhook",
+        "get_webhooks",
+        "get_webhook",
+        "update_webhook",
+        "unregister_webhook"
+      ],
+      "policy": "Application administration. Max five registrations. Serialize changes, store secrets securely, reconcile ambiguous results by reads. Block invoice-event patch until D09 and auth until D10 are resolved."
+    }
+  ],
+  "rate_budgets": {
+    "source": "https://apidocs.abcsupply.com/api-overview/",
+    "sandbox_tps": 10,
+    "sandbox_budget_design": "Conservative aggregate client-ID budget of 10 requests/second across APIs. Confirm exact window and burst behavior.",
+    "production_tps_by_family": {
+      "Account": 20,
+      "Product": 10,
+      "Pricing": 50,
+      "Order": 20,
+      "Invoice": 10,
+      "Location": 30,
+      "Notification": 10
+    },
+    "design": "Shared per-connection/application limiter across workers, with bounded concurrency and reserved interactive capacity; exact burst windows and latency SLAs are not established."
+  },
+  "unsupported_remote_mutations": [
+    "create/update/delete accounts or contacts",
+    "create/update/delete product master or branch master",
+    "create/update/delete price master",
+    "update/cancel/delete an existing order",
+    "create/update/delete order templates",
+    "remove a favorite",
+    "create/pay/update/delete an invoice",
+    "reserve inventory or book a guaranteed delivery slot"
+  ],
+  "unsupported_handling": "Return UNSUPPORTED_OPERATION with documented alternatives and a branch/portal support handoff. Local draft edits are local CRUD and must not be represented as an ABC mutation.",
+  "exception_workflows": [
+    {
+      "name": "unpriced_or_custom_item",
+      "provider_behavior": "The public overview permits zero-price and custom-item submissions for branch review.",
+      "local_policy": "Separate reviewed exception, no automatic exact-catalog purchase; confirm custom description field and pricing expectations with the branch/provider."
+    }
+  ]
+}

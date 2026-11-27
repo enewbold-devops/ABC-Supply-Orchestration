@@ -1,0 +1,93 @@
+{
+  "contractVersion": "0.1.0",
+  "handoffId": "example-handoff-1",
+  "workflowId": "example-workflow-1",
+  "operationId": "place_orders",
+  "context": {
+    "tenantId": "example-tenant",
+    "principalId": "example-principal",
+    "connectionId": "example-connection",
+    "integrationTrack": "third_party_aggregator",
+    "environment": "sandbox",
+    "credentialRef": "opaque-user-credential-reference",
+    "accountBindingRef": "authorized-job-context-reference"
+  },
+  "request": {
+    "path": {},
+    "query": {},
+    "body": [
+      {
+        "requestId": "local-order-0001",
+        "purchaseOrder": "JOB-0001",
+        "branchNumber": "EXAMPLE_BRANCH",
+        "deliveryService": "OTG",
+        "typeCode": "SO",
+        "currency": "USD",
+        "shipTo": {
+          "name": "Example Job",
+          "number": "EXAMPLE_SHIP_TO",
+          "address": {
+            "line1": "Example delivery street",
+            "line2": "",
+            "line3": "",
+            "city": "Example City",
+            "state": "FL",
+            "postal": "00000",
+            "country": "USA"
+          },
+          "contacts": [
+            {
+              "name": "Example Submitter",
+              "functionCode": "SM",
+              "email": "submitter@example.invalid"
+            },
+            {
+              "name": "Example Delivery Contact",
+              "functionCode": "DC",
+              "email": "delivery@example.invalid",
+              "phones": [
+                {
+                  "number": "0000000000",
+                  "type": "MOBILE",
+                  "ext": ""
+                }
+              ]
+            }
+          ]
+        },
+        "deliveryAppointment": {
+          "instructionsTypeCode": "AT",
+          "instructions": "Call delivery contact",
+          "fromTime": "00:00",
+          "toTime": "00:00"
+        },
+        "lines": [
+          {
+            "id": "line-1",
+            "itemNumber": "EXAMPLE_ITEM",
+            "itemDescription": "REPLACE WITH ABC DESCRIPTION",
+            "orderedQty": {
+              "value": 2,
+              "uom": "BD"
+            },
+            "unitPrice": {
+              "value": 10.0,
+              "uom": "BD",
+              "instructions": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "deadlineAt": "2026-12-01T17:00:00Z",
+  "evidenceRefs": [
+    "authorized-job-context-reference",
+    "price-snapshot-reference",
+    "branch-context-reference"
+  ],
+  "commandKey": "example-command-1",
+  "payloadSha256": "84dd29cfe9e768a6cb295bc771446ed0d7c772bb7edc42bd0ef030b394f23b83",
+  "authorizationDecisionRef": "server-policy-decision-reference",
+  "approvalRef": "server-verified-approval-reference"
+}

@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-supply:internal:result:0.1.0",
+  "title": "Proposed Internal Handoff Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "handoffId",
+    "workflowId",
+    "operationId",
+    "outcome",
+    "observedAt",
+    "provider",
+    "data",
+    "rawPayloadRef",
+    "problems"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "handoffId": {
+      "type": "string"
+    },
+    "workflowId": {
+      "type": "string"
+    },
+    "operationId": {
+      "enum": [
+        "place_orders",
+        "get_order_by_number",
+        "get_order_by_confirmation",
+        "get_order_history",
+        "get_order_templates",
+        "get_order_template",
+        "price_items",
+        "search_accounts",
+        "get_sold_to",
+        "get_bill_to",
+        "get_ship_to",
+        "get_ship_to_contacts",
+        "get_item",
+        "get_all_items",
+        "get_favorite_items",
+        "get_recent_items",
+        "get_frequent_items",
+        "add_favorite_item",
+        "search_items",
+        "search_item_availability",
+        "get_item_availability",
+        "get_product_hierarchy",
+        "get_item_image",
+        "search_branches",
+        "get_branch",
+        "register_webhook",
+        "get_webhook",
+        "get_webhooks",
+        "update_webhook",
+        "unregister_webhook",
+        "get_invoice_history",
+        "get_invoice",
+        "get_invoice_pdf"
+      ]
+    },
+    "outcome": {
+      "enum": [
+        "succeeded",
+        "partially_succeeded",
+        "failed",
+        "indeterminate",
+        "pending_visibility",
+        "blocked"
+      ]
+    },
+    "observedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "provider": {
+      "type": "object",
+      "required": [
+        "httpStatus"
+      ],
+      "properties": {
+        "httpStatus": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "batchId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confirmationNumbers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "orderNumbers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "invoiceNumbers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "webhookId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "rawPayloadRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "retryDisposition",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "enum": [
+              "AUTH_REQUIRED",
+              "ACCESS_DENIED",
+              "VALIDATION_FAILED",
+              "PROVIDER_BUSINESS_REJECTED",
+              "RATE_LIMITED",
+              "TRANSIENT_PROVIDER_FAILURE",
+              "INDETERMINATE_MUTATION",
+              "PENDING_BRANCH_ACCEPTANCE",
+              "CONTRACT_MISMATCH",
+              "NOT_FOUND",
+              "UNSUPPORTED_OPERATION"
+            ]
+          },
+          "retryDisposition": {
+            "enum": [
+              "never_automatically",
+              "after_reauthorization",
+              "after_correction",
+              "bounded_read_retry",
+              "reconcile_first",
+              "poll_read_with_deadline"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "lineId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requestId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
