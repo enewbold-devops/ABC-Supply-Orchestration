@@ -1,0 +1,167 @@
+{
+  "review_date": "2026-11-27",
+  "kind": "local_reference_artifact_structural_checks",
+  "passed_checks": 38,
+  "checks": [
+    {
+      "name": "all_top_level_JSON_parse",
+      "status": "passed"
+    },
+    {
+      "name": "schema_meta_valid:oauth-transaction.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema_meta_valid:authorization-decision.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema_meta_valid:organization-membership.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema_meta_valid:connection-record.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema_meta_valid:account-binding.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic_connection_valid",
+      "status": "passed"
+    },
+    {
+      "name": "connection_rejects_raw_token_field",
+      "status": "passed"
+    },
+    {
+      "name": "connection_requires_independent_customer_org",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic_link_transaction_valid",
+      "status": "passed"
+    },
+    {
+      "name": "link_transaction_requires_session_binding",
+      "status": "passed"
+    },
+    {
+      "name": "link_transaction_rejects_invalid_timestamp",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic_authorization_decision_valid",
+      "status": "passed"
+    },
+    {
+      "name": "undocumented_operation_rejected_in_decision_contract",
+      "status": "passed"
+    },
+    {
+      "name": "33_unique_operation_profiles",
+      "status": "passed"
+    },
+    {
+      "name": "all_operation_profiles_disabled_pending_verification",
+      "status": "passed"
+    },
+    {
+      "name": "TPA_invoice_REST_explicitly_gated",
+      "status": "passed"
+    },
+    {
+      "name": "favorite_add_classified_as_mutation_despite_read_scope",
+      "status": "passed"
+    },
+    {
+      "name": "sandbox_discovery_issuer_matches_profile",
+      "status": "passed"
+    },
+    {
+      "name": "sandbox_metadata_is_oidc_capability_evidence",
+      "status": "passed"
+    },
+    {
+      "name": "sandbox_client_credentials_metadata_mismatch_recorded",
+      "status": "passed"
+    },
+    {
+      "name": "production_discovery_issuer_matches_profile",
+      "status": "passed"
+    },
+    {
+      "name": "production_metadata_is_oidc_capability_evidence",
+      "status": "passed"
+    },
+    {
+      "name": "production_client_credentials_metadata_mismatch_recorded",
+      "status": "passed"
+    },
+    {
+      "name": "all_18_authenticated_acceptance_scenarios_marked_not_executed",
+      "status": "passed"
+    },
+    {
+      "name": "report_has_11_intended_pages",
+      "status": "passed"
+    },
+    {
+      "name": "page_1_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_2_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_3_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_4_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_5_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_6_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_7_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_8_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_9_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_10_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "page_11_has_body_content",
+      "status": "passed"
+    },
+    {
+      "name": "all_PDF_text_boxes_within_page",
+      "status": "passed"
+    }
+  ],
+  "observed_public_metadata_gets": 2,
+  "authenticated_provider_tests_executed": 0,
+  "visual_QA": "PDF rendered and visually reviewed; source-page overflow corrected; final render inspected before delivery",
+  "limitations": [
+    "Runtime authorization and identity invariants require implementation.",
+    "No user sign-in, provider token exchange, OAuth consent, protected API call, revocation or operational mutation executed.",
+    "No tenant or client registration configured."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "customerOrgId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platformUserId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "connectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "enum": [
+        "sandbox",
+        "production"
+      ]
+    },
+    "transactionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entraSessionBindingRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stateDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "pkceVerifierRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expectedAbcIssuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abcClientRegistrationRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "redirectUri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "requestedScopes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "redeeming",
+        "completed",
+        "failed",
+        "expired"
+      ]
+    },
+    "returnPathRef": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "contractVersion",
+    "customerOrgId",
+    "platformUserId",
+    "connectionId",
+    "environment",
+    "transactionId",
+    "entraSessionBindingRef",
+    "stateDigest",
+    "pkceVerifierRef",
+    "expectedAbcIssuer",
+    "abcClientRegistrationRef",
+    "redirectUri",
+    "requestedScopes",
+    "createdAt",
+    "expiresAt",
+    "status",
+    "returnPathRef"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-platform:oauth-transaction:0.1.0",
+  "title": "Proposed Single-Use OAuth Link Transaction",
+  "x-invariants": [
+    "Generate unpredictable state and PKCE verifier server-side; S256 challenge only.",
+    "Use compare-and-set to consume a pending transaction; replay is rejected.",
+    "The initiating Entra user, session and customerOrg must remain the same at callback; otherwise restart connection.",
+    "Never store raw authorization codes in audit logs; do not repeat token redemption after an ambiguous exchange without reconciliation.",
+    "No caller-supplied callback URL or unchecked return-to URL."
+  ]
+}

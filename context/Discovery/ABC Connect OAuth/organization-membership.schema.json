@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-platform:org-membership:0.1.0",
+  "title": "Proposed Customer Organization Membership",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "membershipId",
+    "customerOrgId",
+    "platformUserId",
+    "roles",
+    "state",
+    "revision"
+  ],
+  "properties": {
+    "membershipId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "customerOrgId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platformUserId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "roles": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Viewer",
+          "Estimator",
+          "Purchaser",
+          "OrganizationAdmin"
+        ]
+      }
+    },
+    "state": {
+      "enum": [
+        "invited",
+        "active",
+        "suspended",
+        "removed"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "x-invariants": [
+    "Roles are scoped to this organization, not every user in the External ID tenant.",
+    "Assignment is performed by authorized platform administration, never self-asserted from form data.",
+    "ABC entitlement is evaluated independently."
+  ]
+}

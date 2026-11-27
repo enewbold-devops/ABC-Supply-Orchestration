@@ -1,0 +1,109 @@
+{
+  "version": "0.1.0",
+  "kind": "proposed platform routes and state machine; these are NOT ABC endpoints",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/connections/abc/start",
+      "requires": "valid platform identity, active org membership, connections.manage; CSRF protection for cookie session",
+      "input": [
+        "customerOrgId",
+        "environment",
+        "capabilitySetRef"
+      ],
+      "server_behavior": "Resolve fixed ABC client/profile and callback; persist single-use transaction bound to session/user/org; generate state and PKCE S256; redirect to ABC authorization endpoint.",
+      "output": "redirect; no provider token"
+    },
+    {
+      "method": "GET",
+      "path": "/connections/abc/callback",
+      "input": [
+        "code or provider error",
+        "state"
+      ],
+      "server_behavior": "Verify single-use state and initiating context before token redemption; exchange server-side with correct ABC client auth; commit tokens atomically; verify returned grant; discover accounts.",
+      "output": "redacted connection summary; token set remains private"
+    },
+    {
+      "method": "POST",
+      "path": "/connections/abc/{connectionId}/bindings",
+      "requires": "owner/admin local permission and provider-authorized account evidence",
+      "input": [
+        "selected account reference",
+        "selected branch reference"
+      ],
+      "server_behavior": "Intersect user-visible ABC accounts with application-approved customer-org account bindings; persist ACL and evidence time.",
+      "output": "active scoped connection; does not create an ABC account"
+    },
+    {
+      "method": "GET",
+      "path": "/connections/abc/{connectionId}",
+      "requires": "authorized connection ownership/org membership",
+      "output": "state, allowed capabilities, redacted account names and last verification time; no credentials"
+    },
+    {
+      "method": "DELETE",
+      "path": "/connections/abc/{connectionId}",
+      "requires": "explicit disconnect permission and intent",
+      "server_behavior": "Immediately disable local token use, cancel queued customer operations, remove token access, attempt provider revocation using a tested client profile, and retain minimal audit evidence.",
+      "output": "local disconnection status and separate provider-revocation result"
+    }
+  ],
+  "layers": [
+    "Entra authentication",
+    "platform API audience/scope validation",
+    "application customer-org membership and operation policy",
+    "ABC integration registration and grant",
+    "ABC customer/account/branch authorization",
+    "transaction approval and command ledger",
+    "webhook machine trust"
+  ],
+  "lifecycle": {
+    "transitions": [
+      [
+        "unlinked",
+        "authorization_pending"
+      ],
+      [
+        "authorization_pending",
+        "authorized_unbound"
+      ],
+      [
+        "authorized_unbound",
+        "active"
+      ],
+      [
+        "active",
+        "reconsent_required"
+      ],
+      [
+        "active",
+        "reauth_required"
+      ],
+      [
+        "active",
+        "suspended"
+      ],
+      [
+        "active",
+        "revocation_pending"
+      ],
+      [
+        "revocation_pending",
+        "disconnected"
+      ]
+    ],
+    "on_login_change": "invalidate pending linking transaction; do not attach credentials to a different Entra user",
+    "on_membership_revocation": "deny broker calls regardless of remaining ABC access-token validity",
+    "on_refresh_invalid_grant": "mark reauth_required; stop customer work until reconnect",
+    "on_scope_upgrade": "request provider-approved consent again; do not claim local role assignment enlarged ABC grant"
+  },
+  "refresh_rules": [
+    "one distributed refresh lock per token set",
+    "read expiry metadata; use a configured skew buffer",
+    "atomically replace any returned refresh token and access token using record revision",
+    "do not log tokens/codes/secrets; store last refresh outcome and provider correlation identifiers only",
+    "client_credentials obtains a new application token, never uses a refresh token",
+    "never use a TPA application token as fallback for failed customer pricing/order authorization"
+  ]
+}

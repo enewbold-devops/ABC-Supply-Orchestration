@@ -1,0 +1,119 @@
+{
+  "version": "0.1.0",
+  "review_date": "2026-11-27",
+  "status": "architecture reference; no client token exchange or authenticated API tests",
+  "evidence_levels": {
+    "D": "documented product integration contract",
+    "M": "unauthenticated authorization-server metadata observed",
+    "T": "registered-client behavior verified; NONE in this review",
+    "P": "proposed platform design"
+  },
+  "profiles": [
+    {
+      "id": "tpa_application",
+      "integration_track": "third_party_aggregator",
+      "grant_type": "client_credentials",
+      "documented_scopes": [
+        "location.read",
+        "product.read",
+        "notification.read",
+        "notification.write"
+      ],
+      "refresh_token": false,
+      "uses": [
+        "shared catalog ingestion",
+        "branch lookup",
+        "application webhook registry"
+      ],
+      "source": "https://apidocs.abcsupply.com/third-party-aggregator-integration-track/",
+      "client_verification": "not_run"
+    },
+    {
+      "id": "tpa_delegated",
+      "integration_track": "third_party_aggregator",
+      "grant_type": "authorization_code",
+      "pkce_method": "S256",
+      "documented_scopes": [
+        "account.read",
+        "product.read",
+        "pricing.read",
+        "order.read",
+        "order.write",
+        "location.read",
+        "notification.read",
+        "notification.write",
+        "offline_access"
+      ],
+      "refresh_token": "requires offline_access and provider grant",
+      "uses": [
+        "customer account discovery",
+        "customer-specific catalog and favorites",
+        "pricing",
+        "order submission and eligible reads"
+      ],
+      "client_authentication": "client_secret_basic in public examples; registered-client method must be confirmed",
+      "background_execution": "No unattended customer pricing/orders until ABC clarifies active-user requirement and approves the intended workload",
+      "source": "https://apidocs.abcsupply.com/authorization-methods/",
+      "client_verification": "not_run"
+    },
+    {
+      "id": "ib_application",
+      "integration_track": "individual_business",
+      "grant_type": "client_credentials",
+      "documented_scopes": [
+        "location.read",
+        "product.read",
+        "account.read",
+        "pricing.read",
+        "allOrder.read",
+        "order.write",
+        "notification.read",
+        "notification.write",
+        "invoice.read",
+        "invoice.history.read"
+      ],
+      "refresh_token": false,
+      "uses": [
+        "ABC-enrolled direct customer accounts; local app policies partition which users can use them"
+      ],
+      "source": "https://apidocs.abcsupply.com/individual-business-integration-track/",
+      "client_verification": "not_run"
+    },
+    {
+      "id": "optional_abc_oidc_federation",
+      "status": "feasibility_candidate_not_approved",
+      "grant_type": "authorization_code",
+      "candidate_identity_scopes": [
+        "openid",
+        "profile",
+        "email"
+      ],
+      "required_client_authentication_for_entra": [
+        "client_secret_post",
+        "client_secret_jwt"
+      ],
+      "entra_rejects_client_secret_basic": true,
+      "metadata_observation": "ABC advertises OIDC, S256, RS256, public subject identifiers, UserInfo and both Entra-compatible client authentication candidates",
+      "gates": [
+        "ABC provisions a client with an Entra-supported authentication method",
+        "ABC allows OIDC scopes, Entra federation callback URLs and sign-in use",
+        "ID token issuer/audience/signature/expiry/nonce and returned identity claims are tested",
+        "Entra identity federation and ABC API consent/token custody are designed separately"
+      ],
+      "automatic_upstream_token_forwarding_to_platform": "not_established; retain separate ABC API broker connection",
+      "client_verification": "not_run"
+    }
+  ],
+  "token_lifetimes_from_abc_docs": {
+    "access_token_minutes": 30,
+    "refresh_token_inactivity_days": 30,
+    "refresh_absolute_lifetime": "docs describe renewable lifetime with continued refresh; not an irrevocability or availability guarantee",
+    "runtime_policy": "Prefer actual token-response expiry metadata; keep renewal state server-side; serialize refresh and atomically replace returned tokens. Do not refresh solely to keep unused accounts alive."
+  },
+  "discovery_caveats": [
+    "Metadata advertises server capabilities, not this client entitlement.",
+    "Both observed grant_types_supported arrays omit client_credentials even though product docs support it.",
+    "Both observed scope arrays omit allOrder.read, invoice.read and invoice.history.read; production additionally advertises allInvoice.read.",
+    "Do not substitute allInvoice.read for the documented invoice scopes, enable password/implicit grants, or enable provider-management scopes from discovery."
+  ]
+}

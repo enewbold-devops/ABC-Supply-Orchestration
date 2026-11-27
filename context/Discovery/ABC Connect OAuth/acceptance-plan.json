@@ -1,0 +1,114 @@
+{
+  "version": "0.1.0",
+  "executed_authenticated_tests": 0,
+  "tests": [
+    {
+      "id": "T01",
+      "name": "Entra issuer/audience validation",
+      "expected": "Reject wrong audience, wrong issuer, expired token, ID token used as API token, and unauthorized calling client.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T02",
+      "name": "Organization isolation",
+      "expected": "A user belonging to org A cannot select an org B connection or resource even when both users share the same Entra tid.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T03",
+      "name": "Callback CSRF and replay",
+      "expected": "Wrong/missing state, reused code/transaction, expired transaction, changed Entra user/session and changed org all fail linking.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T04",
+      "name": "PKCE",
+      "expected": "Wrong verifier and downgrade attempts fail; exact registered redirect URI is used.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T05",
+      "name": "TPA client credentials",
+      "expected": "Verify only approved platform capabilities; pricing and orders never fall back to app credentials.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T06",
+      "name": "TPA delegated scopes",
+      "expected": "Verify each granted scope, missing-scope denial, canceled consent, reconsent and account discovery.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T07",
+      "name": "IB enrollment",
+      "expected": "Verify configured customer accounts only, allOrder.read/order.read behavior, and invoice scope names.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T08",
+      "name": "OIDC federation candidate",
+      "expected": "ABC provisions compatible post/jwt auth, callbacks and identity scopes; Entra validates returned identity and sign-in succeeds.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T09",
+      "name": "Cross-flow actor proof",
+      "expected": "If same-human binding is required, test approved ABC issuer+sub from federation against a separately verified API connection; email matching is rejected.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T10",
+      "name": "Refresh lifecycle",
+      "expected": "Validate advertised expiry against token response; concurrency lock prevents double rotation; invalid_grant requires reconnect.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T11",
+      "name": "Disconnect and logout",
+      "expected": "Local disable blocks immediate further calls; test provider revocation and independent Entra/ABC browser sessions.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T12",
+      "name": "Membership and role changes",
+      "expected": "Removal or scope downgrade invalidates cached decisions while supplier tokens may still be valid.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T13",
+      "name": "Branch/account authorization",
+      "expected": "Out-of-binding Ship-To, Bill-To, branch, order and invoice IDs are rejected before upstream execution.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T14",
+      "name": "Mutation policy",
+      "expected": "A Viewer with a token containing ABC order.write still cannot submit; Purchaser still needs correct org/account and required approval.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T15",
+      "name": "Webhook trust",
+      "expected": "Validate real secrets separately for update/invoice events; replay, unknown connection and cross-org payloads do not bypass authorization.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T16",
+      "name": "Unattended behavior",
+      "expected": "Prove provider-approved user presence and background constraints before enabling delegated customer automation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T17",
+      "name": "Credential separation",
+      "expected": "No supplier tokens in browser/localStorage/agent arguments/claims/logs; no Entra tokens sent to ABC APIs.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T18",
+      "name": "Secret/key rotation",
+      "expected": "Rotate platform signing keys via metadata/JWKS cache; rotate ABC client secret without exposing it or crossing environments.",
+      "status": "planned_not_executed"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-platform:account-binding:0.1.0",
+  "title": "Proposed ABC Account/Branch Binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bindingId",
+    "customerOrgId",
+    "connectionId",
+    "environment",
+    "soldToNumber",
+    "billToNumber",
+    "shipToNumber",
+    "allowedBranchNumbers",
+    "sourceEvidenceRef",
+    "verifiedAt",
+    "state",
+    "revision"
+  ],
+  "properties": {
+    "bindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "customerOrgId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "connectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "soldToNumber": {
+      "type": "string",
+      "minLength": 1
+    },
+    "billToNumber": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shipToNumber": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceEvidenceRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "enum": [
+        "sandbox",
+        "production"
+      ]
+    },
+    "allowedBranchNumbers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "verifiedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state": {
+      "enum": [
+        "pending_organization_verification",
+        "active",
+        "suspended",
+        "retired"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "x-invariants": [
+    "Provider-visible accounts must be intersected with platform-approved organizational membership and account ownership policy.",
+    "Numbers are opaque supplier identifiers, not values to derive from string suffixes.",
+    "This is a local ACL record; creating it does not create or change an ABC account."
+  ]
+}

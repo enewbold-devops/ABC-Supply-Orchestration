@@ -1,0 +1,89 @@
+{
+  "version": "0.1.0",
+  "issues": [
+    {
+      "id": "A01",
+      "topic": "Documented grants vs discovery",
+      "evidence_or_risk": "client_credentials is documented for both tracks but absent from both discovery grant arrays.",
+      "resolution": "Verify the actual registered-client grant profile; do not remove documented M2M support based solely on generic metadata."
+    },
+    {
+      "id": "A02",
+      "topic": "Invoice scope naming",
+      "evidence_or_risk": "Documented IB invoice.read/invoice.history.read and allOrder.read are absent from observed metadata; production advertises allInvoice.read.",
+      "resolution": "Ask ABC for per-client, per-environment approved scope names. No inferred scope substitution."
+    },
+    {
+      "id": "A03",
+      "topic": "TPA invoice eligibility",
+      "evidence_or_risk": "TPA overview lists invoice REST features, but current invoice endpoint pages say unavailable to TPAs.",
+      "resolution": "Default-deny invoice REST for TPA until explicit provider confirmation."
+    },
+    {
+      "id": "A04",
+      "topic": "Federation client authentication",
+      "evidence_or_risk": "ABC examples use Basic; Entra custom OIDC currently supports post/jwt and rejects Basic. ABC metadata advertises overlapping alternatives.",
+      "resolution": "Provision and test an Entra-compatible ABC federation client. Server advertisement is not client configuration."
+    },
+    {
+      "id": "A05",
+      "topic": "OIDC client permission",
+      "evidence_or_risk": "OIDC and UserInfo are advertised, but no registered client was tested with openid/profile/email or claims.",
+      "resolution": "Obtain approved identity scopes and validate a real ID token/UserInfo response before treating ABC as an app sign-in provider."
+    },
+    {
+      "id": "A06",
+      "topic": "Upstream token custody",
+      "evidence_or_risk": "An Entra-federated login does not establish a supported way for this backend to obtain ABC API refresh tokens.",
+      "resolution": "Keep the API connection broker separate; do not copy ABC tokens into Entra claims or directory attributes."
+    },
+    {
+      "id": "A07",
+      "topic": "User presence",
+      "evidence_or_risk": "TPA guidance requires an active/present user for customer functionality while offering renewable tokens.",
+      "resolution": "Clarify allowed unattended/background actions, consent duration, offboarding and refresh use with ABC."
+    },
+    {
+      "id": "A08",
+      "topic": "Provider actor binding",
+      "evidence_or_risk": "OAuth/API examples alone do not establish a stable user identity claim or ABC user-role claim for your client.",
+      "resolution": "Keep connection UUID separate from identity proof; verify issuer+sub through an approved OIDC/UserInfo profile when needed. Never match by email."
+    },
+    {
+      "id": "A09",
+      "topic": "Order read scopes",
+      "evidence_or_risk": "IB grant guide uses allOrder.read; individual Order pages say order.read.",
+      "resolution": "Verify all affected read endpoints with a provisioned IB client; retain integration-origin restrictions for TPA."
+    },
+    {
+      "id": "A10",
+      "topic": "Lifecycle endpoints",
+      "evidence_or_risk": "Revocation, logout and introspection endpoints are advertised; authentication requirements, permissions and effects were not exercised.",
+      "resolution": "Verify registered-client behavior and distinguish local disconnection from provider revocation and browser logout."
+    },
+    {
+      "id": "A11",
+      "topic": "Refresh rotation",
+      "evidence_or_risk": "Docs describe renewable refresh tokens and returned replacement tokens, but race/reuse/grace and revocation semantics are not specified.",
+      "resolution": "Test serialized refresh, invalid_grant recovery and rotation loss; no infinite-lifetime promise."
+    },
+    {
+      "id": "A12",
+      "topic": "Webhook machine auth",
+      "evidence_or_risk": "Order-invoice event docs disagree about header secret vs payload apiKey.",
+      "resolution": "Validate separately from Entra sign-in. Do not accept unauthenticated events or guess an Entra bearer-token contract."
+    },
+    {
+      "id": "A13",
+      "topic": "Platform tenant boundary",
+      "evidence_or_risk": "One External ID tenant can contain many contractor organizations.",
+      "resolution": "Use application customerOrgId plus membership/account ACLs; tid alone is not customer isolation."
+    },
+    {
+      "id": "A14",
+      "topic": "Azure identity boundary",
+      "evidence_or_risk": "Managed identity can access Azure resources but is not an ABC client credential.",
+      "resolution": "Use hosting managed identity for vault/store access; separately resolve the ABC registered-client credential."
+    }
+  ]
+}

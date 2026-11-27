@@ -1,0 +1,150 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "customerOrgId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platformUserId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "connectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "enum": [
+        "sandbox",
+        "production"
+      ]
+    },
+    "decisionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operationId": {
+      "enum": [
+        "place_orders",
+        "get_order_by_number",
+        "get_order_by_confirmation",
+        "get_order_history",
+        "get_order_templates",
+        "get_order_template",
+        "price_items",
+        "search_accounts",
+        "get_sold_to",
+        "get_bill_to",
+        "get_ship_to",
+        "get_ship_to_contacts",
+        "get_item",
+        "get_all_items",
+        "get_favorite_items",
+        "get_recent_items",
+        "get_frequent_items",
+        "add_favorite_item",
+        "search_items",
+        "search_item_availability",
+        "get_item_availability",
+        "get_product_hierarchy",
+        "get_item_image",
+        "search_branches",
+        "get_branch",
+        "register_webhook",
+        "get_webhook",
+        "get_webhooks",
+        "update_webhook",
+        "unregister_webhook",
+        "get_invoice_history",
+        "get_invoice",
+        "get_invoice_pdf"
+      ]
+    },
+    "platformApiValidationRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "membershipRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accountBindingRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abcScopeProfileRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approvalRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "payloadHash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "outcome": {
+      "enum": [
+        "allow",
+        "deny",
+        "needs_abc_connection",
+        "needs_reconsent",
+        "needs_approval",
+        "provider_capability_unverified"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "checkedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "contractVersion",
+    "customerOrgId",
+    "platformUserId",
+    "connectionId",
+    "environment",
+    "decisionId",
+    "operationId",
+    "platformApiValidationRef",
+    "membershipRef",
+    "accountBindingRef",
+    "abcScopeProfileRef",
+    "approvalRef",
+    "payloadHash",
+    "outcome",
+    "reasons",
+    "checkedAt",
+    "expiresAt"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-platform:authorization-decision:0.1.0",
+  "title": "Proposed Internal Operation Authorization Decision",
+  "x-invariants": [
+    "Service creates this after server-side validation; agent input cannot assert an allow outcome.",
+    "Allow requires current app membership, operation permission, correct grant profile, required granted scope and eligible ABC account/branch.",
+    "For mutations, exact proposed payload and approval rules are reevaluated before execution.",
+    "Connection suspension or membership revocation invalidates cached allow decisions immediately under local policy."
+  ]
+}

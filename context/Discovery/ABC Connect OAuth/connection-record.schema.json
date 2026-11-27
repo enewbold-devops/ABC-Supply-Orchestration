@@ -1,0 +1,156 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": {
+      "const": "0.1.0"
+    },
+    "customerOrgId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platformUserId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "connectionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "enum": [
+        "sandbox",
+        "production"
+      ]
+    },
+    "entraIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tenantId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "tenantId",
+        "objectId",
+        "issuer"
+      ]
+    },
+    "integrationTrack": {
+      "enum": [
+        "third_party_aggregator",
+        "individual_business"
+      ]
+    },
+    "abcClientRegistrationRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abcIssuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abcSubject": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "abcSubjectEvidence": {
+      "enum": [
+        "not_verified",
+        "verified_oidc_or_userinfo_with_client_permission"
+      ]
+    },
+    "state": {
+      "enum": [
+        "unlinked",
+        "authorization_pending",
+        "authorized_unbound",
+        "active",
+        "reconsent_required",
+        "reauth_required",
+        "suspended",
+        "revocation_pending",
+        "disconnected"
+      ]
+    },
+    "tokenSetRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "grantedScopes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "accountBindingRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "authorizedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "lastProviderRefreshAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "contractVersion",
+    "customerOrgId",
+    "platformUserId",
+    "connectionId",
+    "environment",
+    "entraIdentity",
+    "integrationTrack",
+    "abcClientRegistrationRef",
+    "abcIssuer",
+    "abcSubject",
+    "abcSubjectEvidence",
+    "state",
+    "tokenSetRef",
+    "grantedScopes",
+    "accountBindingRefs",
+    "revision"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abc-platform:connection:0.1.0",
+  "title": "Proposed ABC Connection Record",
+  "x-invariants": [
+    "For TPA connections, token use is restricted to connection owner plus active org membership unless explicit provider-approved delegation is separately modeled.",
+    "For IB, this schema records the enrollment/connection; a separate membership and resource-binding ACL authorizes users.",
+    "No raw token or client secret is permitted in this record. tokenSetRef resolves to encrypted server-only storage.",
+    "abcSubject may be populated only after an approved client identity flow verifies issuer and subject. Metadata alone is not identity evidence.",
+    "All customer organizations may share the same Entra tenant ID. CustomerOrgId is an independent application key."
+  ]
+}

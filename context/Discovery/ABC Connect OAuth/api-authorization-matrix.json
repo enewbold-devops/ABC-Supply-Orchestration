@@ -1,0 +1,666 @@
+{
+  "version": "0.1.0",
+  "status": "documentation-derived; every profile requires client verification",
+  "operations": [
+    {
+      "operation_id": "place_orders",
+      "family": "Order",
+      "method": "POST",
+      "path_template": "/api/order/v2/orders",
+      "scope_from_endpoint": "order.write",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "order.write",
+      "is_mutation": true,
+      "platform_permission_example": "orders.submit",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/place-orders/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_order_by_number",
+      "family": "Order",
+      "method": "GET",
+      "path_template": "/api/order/v2/orders/{orderNumber}",
+      "scope_from_endpoint": "order.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "allOrder.read in IB grant guide; order.read on endpoint page; verify per endpoint",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-orders/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_order_by_confirmation",
+      "family": "Order",
+      "method": "GET",
+      "path_template": "/api/order/v2/orders",
+      "scope_from_endpoint": "order.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "allOrder.read in IB grant guide; order.read on endpoint page; verify per endpoint",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-orders/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_order_history",
+      "family": "Order",
+      "method": "GET",
+      "path_template": "/api/order/v2/orders/orderHistory",
+      "scope_from_endpoint": "order.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "allOrder.read in IB grant guide; order.read on endpoint page; verify per endpoint",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-order-history/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_order_templates",
+      "family": "Order",
+      "method": "GET",
+      "path_template": "/api/order/v2/orders/templates",
+      "scope_from_endpoint": "order.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "allOrder.read in IB grant guide; order.read on endpoint page; verify per endpoint",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-order-templates/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_order_template",
+      "family": "Order",
+      "method": "GET",
+      "path_template": "/api/order/v2/orders/templates/{templateId}",
+      "scope_from_endpoint": "order.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "allOrder.read in IB grant guide; order.read on endpoint page; verify per endpoint",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-order-template-by-id/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "price_items",
+      "family": "Pricing",
+      "method": "POST",
+      "path_template": "/api/pricing/v2/prices",
+      "scope_from_endpoint": "pricing.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "pricing.read",
+      "is_mutation": false,
+      "platform_permission_example": "pricing.request",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/price-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "search_accounts",
+      "family": "Account",
+      "method": "POST",
+      "path_template": "/api/account/v1/search/accounts",
+      "scope_from_endpoint": "account.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "account.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/search-accounts/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_sold_to",
+      "family": "Account",
+      "method": "GET",
+      "path_template": "/api/account/v1/soldtos/{soldToNumber}",
+      "scope_from_endpoint": "account.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "account.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-sold-to/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_bill_to",
+      "family": "Account",
+      "method": "GET",
+      "path_template": "/api/account/v1/billtos/{billToNumber}",
+      "scope_from_endpoint": "account.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "account.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-bill-to/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_ship_to",
+      "family": "Account",
+      "method": "GET",
+      "path_template": "/api/account/v1/shiptos/{shipToNumber}",
+      "scope_from_endpoint": "account.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "account.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-ship-to/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_ship_to_contacts",
+      "family": "Account",
+      "method": "GET",
+      "path_template": "/api/accounts/v1/shiptos/{shipToNumber}/contacts",
+      "scope_from_endpoint": "account.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "account.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-ship-to-contacts/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_item",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items/{itemNumber}",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-item/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_all_items",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-all-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_favorite_items",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items/{billToNumber}/favorites",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-favorite-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_recent_items",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items/{billToNumber}/recents",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-recent-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_frequent_items",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items/{billToNumber}/frequents",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-frequent-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "add_favorite_item",
+      "family": "Product",
+      "method": "PUT",
+      "path_template": "/api/product/v1/items/{billToNumber}/favorites/{itemNumber}",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_delegated",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": true,
+      "platform_permission_example": "favorites.manage",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/add-favorite-item/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "search_items",
+      "family": "Product",
+      "method": "POST",
+      "path_template": "/api/product/v1/search/items",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/search-items/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "search_item_availability",
+      "family": "Product",
+      "method": "POST",
+      "path_template": "/api/product/v1/search/availability/items",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/search-item-availability/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_item_availability",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/availability/items/{itemNumber}/branches",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-item-availability/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_product_hierarchy",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/hierarchy",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-product-hierarchy/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_item_image",
+      "family": "Product",
+      "method": "GET",
+      "path_template": "/api/product/v1/items/{assetId}/images",
+      "scope_from_endpoint": "product.read",
+      "tpa_profile": "tpa_delegated per endpoint page",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "product.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-item-image/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "search_branches",
+      "family": "Location",
+      "method": "GET",
+      "path_template": "/api/location/v1/branches",
+      "scope_from_endpoint": "location.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "location.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/search-branches/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_branch",
+      "family": "Location",
+      "method": "GET",
+      "path_template": "/api/location/v1/branches/{branchNumber}",
+      "scope_from_endpoint": "location.read",
+      "tpa_profile": "tpa_application for documented platform data; tpa_delegated for user-limited view",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "location.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-branch/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "register_webhook",
+      "family": "Notification",
+      "method": "POST",
+      "path_template": "/api/notification/v2/webhooks",
+      "scope_from_endpoint": "notification.write",
+      "tpa_profile": "tpa_application preferred for application registry; delegated scopes also listed",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "notification.write",
+      "is_mutation": true,
+      "platform_permission_example": "connections.admin",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/register-webhook/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_webhook",
+      "family": "Notification",
+      "method": "GET",
+      "path_template": "/api/notification/v2/webhooks/{webhookId}",
+      "scope_from_endpoint": "notification.read",
+      "tpa_profile": "tpa_application preferred for application registry; delegated scopes also listed",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "notification.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-webhook/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_webhooks",
+      "family": "Notification",
+      "method": "GET",
+      "path_template": "/api/notification/v2/webhooks",
+      "scope_from_endpoint": "notification.read",
+      "tpa_profile": "tpa_application preferred for application registry; delegated scopes also listed",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "notification.read",
+      "is_mutation": false,
+      "platform_permission_example": "supplier.data.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-webhooks/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "update_webhook",
+      "family": "Notification",
+      "method": "PATCH",
+      "path_template": "/api/notification/v2/webhooks/{webhookId}",
+      "scope_from_endpoint": "notification.write",
+      "tpa_profile": "tpa_application preferred for application registry; delegated scopes also listed",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "notification.write",
+      "is_mutation": true,
+      "platform_permission_example": "connections.admin",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/update-webhook/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "unregister_webhook",
+      "family": "Notification",
+      "method": "DELETE",
+      "path_template": "/api/notification/v2/webhooks/{webhookId}",
+      "scope_from_endpoint": "notification.write",
+      "tpa_profile": "tpa_application preferred for application registry; delegated scopes also listed",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "notification.write",
+      "is_mutation": true,
+      "platform_permission_example": "connections.admin",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/unregister-webhook/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_invoice_history",
+      "family": "Invoice",
+      "method": "GET",
+      "path_template": "/api/invoice/v1/invoices/history/{billToAccount}",
+      "scope_from_endpoint": "invoice.history.read",
+      "tpa_profile": "blocked_current_endpoint_docs; TPA overview disagrees",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "invoice.history.read",
+      "is_mutation": false,
+      "platform_permission_example": "invoices.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-invoice-history/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_invoice",
+      "family": "Invoice",
+      "method": "GET",
+      "path_template": "/api/invoice/v1/invoices/id/{invoiceId}",
+      "scope_from_endpoint": "invoice.read",
+      "tpa_profile": "blocked_current_endpoint_docs; TPA overview disagrees",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "invoice.read",
+      "is_mutation": false,
+      "platform_permission_example": "invoices.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-invoice-by-invoice-id/",
+      "runtime_enabled": false
+    },
+    {
+      "operation_id": "get_invoice_pdf",
+      "family": "Invoice",
+      "method": "GET",
+      "path_template": "/api/invoice/v1/invoices/pdf/{invoiceId}",
+      "scope_from_endpoint": "invoice.read",
+      "tpa_profile": "blocked_current_endpoint_docs; TPA overview disagrees",
+      "ib_profile": "ib_application; provisioned account access required",
+      "ib_scope_evidence": "invoice.read",
+      "is_mutation": false,
+      "platform_permission_example": "invoices.read",
+      "resource_binding": [
+        "customerOrgId",
+        "connectionId",
+        "environment",
+        "verified resource/account eligibility"
+      ],
+      "source": "https://apidocs.abcsupply.com/get-invoice-pdf/",
+      "runtime_enabled": false
+    }
+  ]
+}

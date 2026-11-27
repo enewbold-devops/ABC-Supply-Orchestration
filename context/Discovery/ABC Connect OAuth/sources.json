@@ -1,0 +1,187 @@
+{
+  "review_date": "2026-11-27",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "ABC authorization methods",
+      "url": "https://apidocs.abcsupply.com/authorization-methods/"
+    },
+    {
+      "id": "S02",
+      "title": "ABC third-party track",
+      "url": "https://apidocs.abcsupply.com/third-party-aggregator-integration-track/"
+    },
+    {
+      "id": "S03",
+      "title": "ABC individual business track",
+      "url": "https://apidocs.abcsupply.com/individual-business-integration-track/"
+    },
+    {
+      "id": "S04",
+      "title": "ABC developer portal guide",
+      "url": "https://apidocs.abcsupply.com/developer-portal-user-guide-2/"
+    },
+    {
+      "id": "S05",
+      "title": "ABC invoice history restriction",
+      "url": "https://apidocs.abcsupply.com/get-invoice-history/"
+    },
+    {
+      "id": "S06",
+      "title": "ABC price endpoint",
+      "url": "https://apidocs.abcsupply.com/price-items/"
+    },
+    {
+      "id": "S07",
+      "title": "ABC order detail",
+      "url": "https://apidocs.abcsupply.com/get-orders/"
+    },
+    {
+      "id": "M01",
+      "title": "Entra External ID overview",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/overview-customers-ciam"
+    },
+    {
+      "id": "M02",
+      "title": "External tenant features",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers"
+    },
+    {
+      "id": "M03",
+      "title": "Custom OIDC federation",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-oidc-federation-customers"
+    },
+    {
+      "id": "M04",
+      "title": "Groups and app roles",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/reference-group-app-roles-support"
+    },
+    {
+      "id": "M05",
+      "title": "Claims validation",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/claims-validation"
+    },
+    {
+      "id": "M06",
+      "title": "Access-token boundary",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens"
+    },
+    {
+      "id": "M07",
+      "title": "Microsoft OBO flow",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow"
+    },
+    {
+      "id": "M08",
+      "title": "Azure Key Vault authentication",
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/authentication"
+    },
+    {
+      "id": "M09",
+      "title": "External-tenant discovery",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/security-tokens"
+    },
+    {
+      "id": "R01",
+      "title": "OAuth 2.0 standard",
+      "url": "https://www.rfc-editor.org/rfc/rfc6749.html"
+    },
+    {
+      "id": "R02",
+      "title": "PKCE",
+      "url": "https://www.rfc-editor.org/rfc/rfc7636.html"
+    },
+    {
+      "id": "R03",
+      "title": "OAuth security BCP",
+      "url": "https://www.rfc-editor.org/rfc/rfc9700"
+    },
+    {
+      "id": "R04",
+      "title": "OpenID Connect Core",
+      "url": "https://openid.net/specs/openid-connect-core-1_0.html"
+    },
+    {
+      "id": "D01",
+      "title": "Observed production OIDC discovery",
+      "url": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/.well-known/openid-configuration"
+    },
+    {
+      "id": "D02",
+      "title": "Observed sandbox OIDC discovery",
+      "url": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/.well-known/openid-configuration"
+    }
+  ],
+  "retrieved_document_hashes": [
+    {
+      "key": "abc-authorization",
+      "url": "https://apidocs.abcsupply.com/authorization-methods/",
+      "retrieved_at": "2026-11-27T13:43:04.643932+00:00",
+      "sha256": "953d84480f42e62436295bc7cbc36e7317fae0e300317aa5259d739dd704b2b4",
+      "chars": 14544
+    },
+    {
+      "key": "ms-custom-oidc",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-custom-oidc-federation-customers",
+      "retrieved_at": "2026-11-27T13:43:04.832268+00:00",
+      "sha256": "9f7c3ea285c1f9dd55f865bd7b7f846ef779bd62956e6d3e333266652f6e4a2a",
+      "chars": 10523
+    },
+    {
+      "key": "ms-supported-features",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers",
+      "retrieved_at": "2026-11-27T13:43:04.851807+00:00",
+      "sha256": "e200e7207f96d95dc10b17b783e4e8c9855120a0d3cc644919e18dfea9c0b186",
+      "chars": 40192
+    },
+    {
+      "key": "ms-ciam-overview",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/overview-customers-ciam",
+      "retrieved_at": "2026-11-27T13:43:04.958511+00:00",
+      "sha256": "6670f332d67dabde9d339dbc570b6320e39900dac1e6dbb52b6a53c4b2c77a35",
+      "chars": 12211
+    },
+    {
+      "key": "ms-access-tokens",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens",
+      "retrieved_at": "2026-11-27T13:43:08.177919+00:00",
+      "sha256": "178a019cdd085250a23d2c084deef832b97b3e0d50e85571cf43e8e2293e758f",
+      "chars": 25002
+    },
+    {
+      "key": "ms-obo",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow",
+      "retrieved_at": "2026-11-27T13:43:08.201157+00:00",
+      "sha256": "f53e9f3a531b535e3a5bf09da0095b8e2b41a258847e06287172935b02021163",
+      "chars": 24602
+    }
+  ],
+  "discovery_observations": [
+    {
+      "environment": "production",
+      "url": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/.well-known/openid-configuration",
+      "retrieved_date": "2026-11-27",
+      "retrieval_method": "unauthenticated HTTPS GET; status 200",
+      "stored_json_sha256": "930e2b317c1418325f4b78aea2f415502341d418b73ee9f0edb1ce7f003ffaca",
+      "capability_level": "authorization_server_metadata_only; no client registration tested",
+      "oidc_advertised": true,
+      "client_credentials_advertised_in_grants": false,
+      "user_info_advertised": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/userinfo",
+      "metadata_extra_invoice_scope": [
+        "allInvoice.read"
+      ]
+    },
+    {
+      "environment": "sandbox",
+      "url": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/.well-known/openid-configuration",
+      "retrieved_date": "2026-11-27",
+      "retrieval_method": "unauthenticated HTTPS GET; status 200",
+      "stored_json_sha256": "c9484a53cc6f05570ccc93c35c06cdec79840543c2c57dadb285b9c3e73fe1d0",
+      "capability_level": "authorization_server_metadata_only; no client registration tested",
+      "oidc_advertised": true,
+      "client_credentials_advertised_in_grants": false,
+      "user_info_advertised": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/userinfo",
+      "metadata_extra_invoice_scope": []
+    }
+  ]
+}

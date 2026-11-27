@@ -1,0 +1,78 @@
+{
+  "version": "0.1.0",
+  "sample_only": true,
+  "platform": {
+    "entraExternalTenantId": "<EXTERNAL_TENANT_GUID>",
+    "authority": "https://<tenant-subdomain>.ciamlogin.com/<EXTERNAL_TENANT_GUID>/",
+    "metadataUrl": "https://<tenant-subdomain>.ciamlogin.com/<EXTERNAL_TENANT_GUID>/v2.0/.well-known/openid-configuration",
+    "trustedIssuer": "<EXACT_ISSUER_FROM_ENTRA_METADATA>",
+    "platformApiClientId": "<API_APP_CLIENT_GUID>",
+    "acceptedApiAudience": "<API_APP_CLIENT_GUID_FOR_V2_ACCESS_TOKEN>",
+    "apiAppIdUri": "api://<API_APP_CLIENT_GUID>",
+    "exampleDelegatedScopes": [
+      "supplier.data.read",
+      "pricing.request",
+      "orders.submit",
+      "connections.manage"
+    ],
+    "roleExamples": [
+      "Viewer",
+      "Estimator",
+      "Purchaser",
+      "OrganizationAdmin"
+    ],
+    "authorizationStore": "server-managed per-customer-organization memberships and account bindings"
+  },
+  "abc": {
+    "sandbox": {
+      "issuer": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8",
+      "authorization_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/authorize",
+      "token_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/token",
+      "jwks_uri": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/keys",
+      "userinfo_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/userinfo",
+      "revocation_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/revoke",
+      "end_session_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/logout",
+      "introspection_endpoint": "https://sandbox.auth.partners.abcsupply.com/oauth2/aus1vp07knpuqf6Xz0h8/v1/introspect",
+      "apiBaseUrl": "https://partners-sb.abcsupply.com",
+      "apiBrokerClientId": "<ABC_SANDBOX_CLIENT_ID>",
+      "clientSecretRef": "<SECRET_STORE_REFERENCE>",
+      "registeredTokenEndpointAuthMethod": "<CONFIRM_FOR_THIS_CLIENT>",
+      "approvedIntegrationTrack": "<CONFIRM_WITH_ABC>",
+      "approvedApiScopes": [],
+      "tokenAudience": "<NOT_ESTABLISHED_BY_PUBLIC_METADATA; CONFIRM_IF_VALIDATING_ABC_TOKEN>",
+      "metadataEvidenceLevel": "M_only"
+    },
+    "production": {
+      "issuer": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357",
+      "authorization_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/authorize",
+      "token_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/token",
+      "jwks_uri": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/keys",
+      "userinfo_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/userinfo",
+      "revocation_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/revoke",
+      "end_session_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/logout",
+      "introspection_endpoint": "https://auth.partners.abcsupply.com/oauth2/ausvvp0xuwGKLenYy357/v1/introspect",
+      "apiBaseUrl": "https://partners.abcsupply.com",
+      "apiBrokerClientId": "<ABC_PRODUCTION_CLIENT_ID>",
+      "clientSecretRef": "<SECRET_STORE_REFERENCE>",
+      "registeredTokenEndpointAuthMethod": "<CONFIRM_FOR_THIS_CLIENT>",
+      "approvedIntegrationTrack": "<CONFIRM_WITH_ABC>",
+      "approvedApiScopes": [],
+      "tokenAudience": "<NOT_ESTABLISHED_BY_PUBLIC_METADATA; CONFIRM_IF_VALIDATING_ABC_TOKEN>",
+      "metadataEvidenceLevel": "M_only"
+    }
+  },
+  "azureRuntime": {
+    "hostingIdentity": "managed identity in Azure resource tenant",
+    "secrets": "Key Vault client-secret references; encrypted supplier-token store",
+    "customerTokensAccessAzureResourcesDirectly": false
+  },
+  "forbiddenAssumptions": [
+    "Entra API access token accepted by ABC",
+    "ABC access token accepted as platform sign-in",
+    "Entra tenant GUID equals customer organization ID",
+    "same email proves linked identity",
+    "Entra app role grants ABC account access",
+    "Entra federation exposes ABC API refresh token to downstream apps",
+    "managed identity authenticates directly to ABC token endpoint"
+  ]
+}
